@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: bookinfo-uat-ratings
-        image: ghcr.io/similanklinsmith/bookinfo-ratings:uat
+        image: ghcr.io/similanklinsmith/bookinfo-ratings:dev
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -40,3 +40,4 @@ spec:
           value: mongodb://bookinfo-uat-ratings-mongodb:27017/ratings
       imagePullSecrets:
       - name: registry-bookinfo
+
