@@ -47,7 +47,15 @@ jobs:
               "extraEnv": {
                 "COMMIT_SHA": "${{ github.sha }}"
               }
-            }        
+            }
+acceptance-test:
+    needs: deploy
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check health
+        run: curl http://bookinfo.dev.opsta.net/student96/ratings/health | grep "Ratings is working" 
+
+                            
       # - run: docker build -t ghcr.io/similanklinsmith/bookinfo-ratings:dev .
       # - run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       # - run: docker push ghcr.io/similanklinsmith/bookinfo-ratings:dev
