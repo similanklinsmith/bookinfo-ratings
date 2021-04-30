@@ -53,7 +53,7 @@ acceptance-test:
     runs-on: ubuntu-20.04
     steps:
       - name: Check health check page
-        run: curl http://bookinfo.dev.opsta.net/student96/ratings/health | grep "Ratings is working" 
+        run: curl http://bookinfo.dev.opsta.net/student96/ratings/health | grep "Ratings is working"
 
                     
       # - run: docker build -t ghcr.io/similanklinsmith/bookinfo-ratings:dev .
