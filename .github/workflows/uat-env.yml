@@ -52,7 +52,3 @@ jobs:
       steps:
         - name: Check health check page     
           run: curl http://bookinfo.uat.opsta.net/student96/ratings/health | grep "Ratings is working"
-          
-
-
-
