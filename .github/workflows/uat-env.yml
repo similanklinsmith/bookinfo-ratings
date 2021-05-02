@@ -40,15 +40,3 @@ jobs:
           namespace: student96-bookinfo-uat
           chart: k8s/helm
           value-files: k8s/helm-values/values-bookinfo-uat-ratings.yaml
-          values: |
-            {
-              "extraEnv": {
-                "COMMIT_SHA": "${{ github.sha }}"
-              }
-            }     
-  acceptance-test:
-      needs: deploy
-      runs-on: ubuntu-20.04
-      steps:
-        - name: Check health check page     
-          run: curl http://bookinfo.uat.opsta.net/student96/ratings/health | grep "Ratings is working"
