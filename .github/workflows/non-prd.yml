@@ -58,3 +58,4 @@ jobs:
       - name: Check health check page
         run: curl http://bookinfo.${{ env.ENV_NAME }}.opsta.net/student96/ratings/health | grep "Ratings is working"
         
+        
